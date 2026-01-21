@@ -16,6 +16,7 @@ if __name__ == '__main__':
     all_num = len(feat)
     distmat = torch.pow(feat, 2).sum(dim=1, keepdim=True).expand(all_num, all_num) + \
               torch.pow(feat, 2).sum(dim=1, keepdim=True).expand(all_num, all_num).t()
-    distmat.addmm_(1, -2, feat, feat.t())
+    # distmat.addmm_(1, -2, feat, feat.t())
+    distmat.addmm_(feat, feat.t(), beta=1, alpha=-2)
     distmat = distmat.cpu().numpy()
     np.save(src_dir + '/' + 'feat_distmat', distmat)
