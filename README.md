@@ -13,7 +13,6 @@ conda activate voc-reid
 pip install -r requirements.txt
 ```
 
-
 由於 PyTorch 需依照系統架構（x86 / ARM）與 CUDA 環境選擇對應版本，請依官方指引自行安裝：
 
 👉 [https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/)
@@ -23,6 +22,13 @@ pip install -r requirements.txt
 ```bash
 git clone https://github.com/NVIDIA/apex third_party/apex
 python3 third_party/apex/setup.py install
+```
+
+### 資料集下載
+
+```bash
+python scripts/prepare_datasets.py
+python scripts/download_pre_model.py
 ```
 
 ## step 1 Prepare Data
