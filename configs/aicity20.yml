@@ -25,7 +25,7 @@ DATALOADER:
   NUM_WORKERS: 8
 
 SOLVER:
-  FP16: True
+  FP16: False
   LR_SCHEDULER: 'cosine_step'
   OPTIMIZER_NAME: 'Adam'
   WARMUP_ITERS: 0
