@@ -2,6 +2,7 @@ import os
 import shutil
 import torch
 import requests
+import gdown
 
 
 def download_file(url, output_path, chunk_size=8192):
@@ -17,7 +18,7 @@ def download_file(url, output_path, chunk_size=8192):
                 f.write(chunk)
 
 
-def process_pretrained_model(url, target_dir, final_name, tar=False):
+def process_pretrained_model(url, target_dir, final_name, tar=False, is_gdrive=True):
     """
     下載預訓練模型，選擇是否包成 .tar
     """
@@ -34,7 +35,10 @@ def process_pretrained_model(url, target_dir, final_name, tar=False):
     print(f"⬇️ Downloading pretrained model: {final_name}")
 
     try:
-        download_file(url, tmp_path)
+        if not is_gdrive:
+            download_file(url, tmp_path)
+        else:
+            gdown.download(url, tmp_path, quiet=False, fuzzy=True)
 
         if os.path.getsize(tmp_path) < 1024 * 1024:
             raise ValueError("File too small, 可能下載失敗")
@@ -58,10 +62,11 @@ def process_pretrained_model(url, target_dir, final_name, tar=False):
 
 pretrained_models = [
     {
-        "url": "https://github.com/XingangPan/IBN-Net/releases/download/v1.0/resnet50_ibn_a-d9d0bb7b.pth",
+        "url": "https://drive.google.com/file/d/1XB4v1cOZSRCBnGWEcEP61PeQwSODmcUM/view?usp=drive_link",
         "dir": "pre_models",
-        "name": "resnet50_ibn_a.pth.tar",
+        "name": "resnext101_ibn_a.pth.tar",
         "tar": True,
+        "is_google_drive": True,
     },
 ]
 
@@ -71,4 +76,5 @@ for model in pretrained_models:
         model["dir"],
         model["name"],
         tar=model.get("tar", False),
+        is_gdrive= model.get("is_google_drive", False)
     )
