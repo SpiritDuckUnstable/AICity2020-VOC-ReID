@@ -17,13 +17,6 @@ pip install -r requirements.txt
 
 👉 [https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/)
 
-安裝 [apex](https://github.com/NVIDIA/apex) 庫:
-
-```bash
-git clone https://github.com/NVIDIA/apex third_party/apex
-python3 third_party/apex/setup.py install
-```
-
 ### 資料集下載
 
 ```bash
