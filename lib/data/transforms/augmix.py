@@ -177,7 +177,7 @@ class AugMix(object):
 
     def __call__(self, img):
         if random.random() > self.prob:
-            return np.asarray(img)
+            return np.array(img)
         ws = np.float32(
             np.random.dirichlet([self.aug_prob_coeff] * self.mixture_width))
         m = np.float32(np.random.beta(self.aug_prob_coeff, self.aug_prob_coeff))
@@ -193,5 +193,5 @@ class AugMix(object):
             # Preprocessing commutes since all coefficients are convex
             mix += ws[i] * np.asarray(image_aug)
 
-        mixed = (1 - m) * np.asarray(img) + m * mix
+        mixed = (1 - m) * np.array(img) + m * mix
         return mixed.astype(np.uint8)
