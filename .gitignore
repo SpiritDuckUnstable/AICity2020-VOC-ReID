@@ -2,3 +2,10 @@
 .pyc
 output
 log
+
+datasets/
+apex/
+__pycache__/
+pre_models/
+*.zip
+*.part
