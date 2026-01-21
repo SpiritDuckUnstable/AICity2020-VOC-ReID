@@ -1,6 +1,6 @@
 #----------------------- ensemble three models (resnet50, resnet101, resnext101)-------------------------------
 python tools/train.py --config_file='configs/aicity20.yml' \
-MODEL.DEVICE_ID "('1')" \
+MODEL.DEVICE_ID "('0')" \
 MODEL.MODEL_TYPE "baseline" \
 MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.PRETRAIN_PATH "('/data/zhuang39/AICity2020-VOC-ReID/pre_models/resnet50_ibn_a.pth.tar')" \
@@ -22,7 +22,7 @@ OUTPUT_DIR "('./output/aicity20/0409-ensemble/r50-320-circle')"
 
 
 python tools/train.py --config_file='configs/aicity20.yml' \
-MODEL.DEVICE_ID "('1')" \
+MODEL.DEVICE_ID "('0')" \
 MODEL.MODEL_TYPE "baseline" \
 MODEL.NAME "('resnet101_ibn_a')" \
 MODEL.PRETRAIN_PATH "('/data/zhuang39/AICity2020-VOC-ReID/pre_models/resnet101_ibn_a.pth.tar')" \
@@ -44,7 +44,7 @@ OUTPUT_DIR "('./output/aicity20/0409-ensemble/r101-320-circle')"
 
 
 python tools/train.py --config_file='configs/aicity20.yml' \
-MODEL.DEVICE_ID "('1')" \
+MODEL.DEVICE_ID "('0')" \
 MODEL.MODEL_TYPE "baseline" \
 MODEL.NAME "('resnext101_ibn_a')" \
 MODEL.PRETRAIN_PATH "('/data/zhuang39/AICity2020-VOC-ReID/pre_models/resnext101_ibn_a.pth.tar')" \
