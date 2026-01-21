@@ -14,7 +14,7 @@ SOLVER.FREEZE_BASE_EPOCHS 2 \
 MODEL.TRIPLET_LOSS_WEIGHT 1.0 \
 DATASETS.TRAIN "('aicity20-trainval',)" \
 DATASETS.TEST "('aicity20-trainval',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 OUTPUT_DIR "('./output/aicity20/0420-search/regnet')"
 
 
@@ -34,7 +34,7 @@ SOLVER.FREEZE_BASE_EPOCHS 2 \
 MODEL.TRIPLET_LOSS_WEIGHT 1.0 \
 DATASETS.TRAIN "('aicity20-trainval',)" \
 DATASETS.TEST "('aicity20-trainval',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 OUTPUT_DIR "('./output/aicity20/0420-search/nest50')"
 
 
@@ -55,5 +55,5 @@ SOLVER.FREEZE_BASE_EPOCHS 2 \
 MODEL.TRIPLET_LOSS_WEIGHT 1.0 \
 DATASETS.TRAIN "('aicity20-trainval',)" \
 DATASETS.TEST "('aicity20-trainval',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 OUTPUT_DIR "('./output/aicity20/0417-search/nest50-ibn')"

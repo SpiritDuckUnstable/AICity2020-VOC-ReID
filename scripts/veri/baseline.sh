@@ -15,7 +15,7 @@ INPUT.SIZE_TRAIN '([256, 256])' \
 INPUT.SIZE_TEST '([256, 256])' \
 DATASETS.TRAIN "('veri',)" \
 DATASETS.TEST "('veri',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 OUTPUT_DIR "('./output/veri/baseline')"
 
 
@@ -36,5 +36,5 @@ INPUT.SIZE_TRAIN '([320, 320])' \
 INPUT.SIZE_TEST '([320, 320])' \
 DATASETS.TRAIN "('veri',)" \
 DATASETS.TEST "('veri',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 OUTPUT_DIR "('./output/veri/0412-search/size320')"

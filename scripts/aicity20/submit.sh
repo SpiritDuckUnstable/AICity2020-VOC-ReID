@@ -5,7 +5,7 @@ MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('aicity20',)" \
 DATASETS.TEST "('aicity20',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 MODEL.PRETRAIN_CHOICE "('self')" \
 INPUT.SIZE_TRAIN '([320, 320])' \
 INPUT.SIZE_TEST '([320, 320])' \
@@ -25,7 +25,7 @@ MODEL.NAME "('resnet101_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('aicity20',)" \
 DATASETS.TEST "('aicity20',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 MODEL.PRETRAIN_CHOICE "('self')" \
 INPUT.SIZE_TRAIN '([320, 320])' \
 INPUT.SIZE_TEST '([320, 320])' \
@@ -44,7 +44,7 @@ MODEL.NAME "('resnext101_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('aicity20',)" \
 DATASETS.TEST "('aicity20',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 MODEL.PRETRAIN_CHOICE "('self')" \
 INPUT.SIZE_TRAIN '([320, 320])' \
 INPUT.SIZE_TEST '([320, 320])' \
@@ -64,7 +64,7 @@ MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('aicity20-test',)" \
 DATASETS.TEST "('aicity20-test',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 MODEL.PRETRAIN_CHOICE "('self')" \
 TEST.QUERY_EXPANSION False \
 TEST.DO_DBA False \
@@ -86,7 +86,7 @@ MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('aicity20',)" \
 DATASETS.TEST "('aicity20',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 MODEL.PRETRAIN_CHOICE "('self')" \
 TEST.QUERY_EXPANSION False \
 TEST.DO_DBA False \
@@ -107,7 +107,7 @@ MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('aicity20',)" \
 DATASETS.TEST "('aicity20',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 MODEL.PRETRAIN_CHOICE "('self')" \
 TEST.QUERY_EXPANSION False \
 TEST.DO_DBA False \
@@ -127,7 +127,7 @@ MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('aicity20',)" \
 DATASETS.TEST "('aicity20',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 MODEL.PRETRAIN_CHOICE "('self')" \
 TEST.QUERY_EXPANSION False \
 TEST.DO_DBA False \

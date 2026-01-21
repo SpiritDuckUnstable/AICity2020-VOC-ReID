@@ -5,7 +5,7 @@ MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('aicity20',)" \
 DATASETS.TEST "('aicity20',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 MODEL.PRETRAIN_CHOICE "('self')" \
 TEST.WRITE_RESULT True \
 TEST.WEIGHT "('./output/aicity20/0409-ensemble/ReCamID/best.pth')"
@@ -19,7 +19,7 @@ MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('aicity20',)" \
 DATASETS.TEST "('aicity20',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 MODEL.PRETRAIN_CHOICE "('self')" \
 TEST.WRITE_RESULT True \
 TEST.WEIGHT "('./output/aicity20/0409-ensemble/ReOriID/best.pth')"

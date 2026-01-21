@@ -5,7 +5,7 @@ MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('veri',)" \
 DATASETS.TEST "('veri',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 MODEL.PRETRAIN_CHOICE "('self')" \
 TEST.WRITE_RESULT True \
 TEST.WEIGHT "('./output/veri/ReOriID/best.pth')"
@@ -21,7 +21,7 @@ MODEL.MODEL_TYPE "baseline" \
 MODEL.POOLING_METHOD 'GeM' \
 DATASETS.TRAIN "('veri',)" \
 DATASETS.TEST "('veri',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 MODEL.PRETRAIN_CHOICE "('self')" \
 TEST.WRITE_RESULT True \
 TEST.WEIGHT "('./output/veri/ReCamID/best.pth')"
@@ -36,7 +36,7 @@ MODEL.MODEL_TYPE "baseline" \
 MODEL.POOLING_METHOD 'GeM' \
 DATASETS.TRAIN "('veri',)" \
 DATASETS.TEST "('veri',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 MODEL.PRETRAIN_CHOICE "('self')" \
 INPUT.SIZE_TRAIN '([320, 320])' \
 INPUT.SIZE_TEST '([320, 320])' \

@@ -15,5 +15,5 @@ SOLVER.MAX_EPOCHS 12 \
 SOLVER.FREEZE_BASE_EPOCHS 2 \
 DATASETS.TRAIN "('aicity20-ReOri',)" \
 DATASETS.TEST "('aicity20-ReOri',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 OUTPUT_DIR "('./output/aicity20/0409-ReOriID')"

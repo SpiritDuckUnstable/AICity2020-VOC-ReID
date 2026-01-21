@@ -17,7 +17,7 @@ INPUT.SIZE_TRAIN '([320, 320])' \
 INPUT.SIZE_TEST '([320, 320])' \
 DATASETS.TRAIN "('aicity20', 'aicity20-sim',)" \
 DATASETS.TEST "('veri',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 OUTPUT_DIR "('./output/aicity20/0409-ensemble/r50-320-circle')"
 
 
@@ -39,7 +39,7 @@ INPUT.SIZE_TRAIN '([320, 320])' \
 INPUT.SIZE_TEST '([320, 320])' \
 DATASETS.TRAIN "('aicity20', 'aicity20-sim',)" \
 DATASETS.TEST "('veri',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 OUTPUT_DIR "('./output/aicity20/0409-ensemble/r101-320-circle')"
 
 
@@ -61,5 +61,5 @@ INPUT.SIZE_TRAIN '([320, 320])' \
 INPUT.SIZE_TEST '([320, 320])' \
 DATASETS.TRAIN "('aicity20', 'aicity20-sim',)" \
 DATASETS.TEST "('veri',)" \
-DATASETS.ROOT_DIR "('/home/zxy/data/ReID/vehicle')" \
+DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 OUTPUT_DIR "('./output/aicity20/0409-ensemble/next101-320-circle')"
