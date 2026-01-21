@@ -20,7 +20,8 @@ try:
     from apex import amp, optimizers
     from apex.multi_tensor_apply import multi_tensor_applier
 except ImportError:
-    raise ImportError("Please install apex from https://www.github.com/nvidia/apex to run this example.")
+    # raise ImportError("Please install apex from https://www.github.com/nvidia/apex to run this example.")
+    pass
 
 
 def do_train(
@@ -113,7 +114,8 @@ def train(model, dataset, train_loader, optimizer, loss_fn, epoch, cfg, logger):
         torch.cuda.synchronize()
 
         model_time.update(time.time() - model_start)
-        losses.update(to_python_float(loss.data), input.size(0))
+        # losses.update(to_python_float(loss.data), input.size(0))
+        losses.update(loss.item(), input.size(0))
 
         if ITER % log_period == 0:
             logger.info("Epoch[{}] Iteration[{}/{}] Loss: {:.3f}, data time: {:.3f}s, model time: {:.3f}s"
