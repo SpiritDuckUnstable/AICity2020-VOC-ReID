@@ -62,11 +62,11 @@ def process_pretrained_model(url, target_dir, final_name, tar=False, is_gdrive=T
 
 pretrained_models = [
     {
-        "url": "https://drive.google.com/file/d/1XB4v1cOZSRCBnGWEcEP61PeQwSODmcUM/view?usp=drive_link",
+        "url": "https://github.com/XingangPan/IBN-Net/releases/download/v1.0/resnext101_ibn_a-6ace051d.pth",
         "dir": "pre_models",
         "name": "resnext101_ibn_a.pth.tar",
         "tar": True,
-        "is_google_drive": True,
+        "is_google_drive": False,
     },
 ]
 
