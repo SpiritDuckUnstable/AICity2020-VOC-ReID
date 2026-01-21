@@ -284,7 +284,7 @@ def decode_trackIndice(trackIndice, img_paths, tracks):
                 idxs.append(name_to_idx[name])
             indices[i, count:count+len(idxs)] = idxs
             count += len(idxs)
-    return indices.astype(np.int)
+    return indices.astype(int)
 
 
 def orientation_penalize(distmat, img_paths, dataset, weight=0.1):

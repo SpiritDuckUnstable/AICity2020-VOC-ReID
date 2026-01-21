@@ -78,7 +78,7 @@ def vis_actmap(model, cfg, loader, out_dir):
                 bbox[:2] *= 0.7
                 bbox[2:] *= 1.2
 
-                bbox = np.array(bbox, dtype=np.int)
+                bbox = np.array(bbox, dtype=int)
 
                 results.append({'img_path': '/'.join(img_path[j].split('/')[-2:]), 'bbox': bbox.tolist()})
 
