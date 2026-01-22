@@ -3,7 +3,7 @@
 ### conda 環境
 
 ```bash
-conda create --name voc-reid python=3.11.14
+conda create --name voc-reid python=3.10.19
 conda activate voc-reid
 ```
 
