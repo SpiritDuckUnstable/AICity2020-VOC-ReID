@@ -1,5 +1,5 @@
 python tools/train.py --config_file='configs/aicity20.yml' \
-MODEL.DEVICE_ID "('3')" \
+MODEL.DEVICE_ID "('0')" \
 MODEL.MODEL_TYPE "baseline" \
 MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.PRETRAIN_PATH "('/data/zhuang39/AICity2020-VOC-ReID/pre_models/resnet50_ibn_a.pth.tar')" \
