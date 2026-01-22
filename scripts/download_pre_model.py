@@ -68,6 +68,20 @@ pretrained_models = [
         "tar": True,
         "is_google_drive": False,
     },
+    {
+        "url": "https://github.com/XingangPan/IBN-Net/releases/download/v1.0/resnet50_ibn_a-d9d0bb7b.pth",
+        "dir": "pre_models",
+        "name": "resnet50_ibn_a.pth.tar",
+        "tar": True,
+        "is_google_drive": False,
+    },
+    {
+        "url": "https://github.com/XingangPan/IBN-Net/releases/download/v1.0/resnet101_ibn_a-59ea0ac6.pth",
+        "dir": "pre_models",
+        "name": "resnet101_ibn_a.pth.tar",
+        "tar": True,
+        "is_google_drive": False,
+    }
 ]
 
 for model in pretrained_models:

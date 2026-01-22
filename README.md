@@ -62,8 +62,23 @@ python scripts/download_pre_model.py
 
 ```bash
 # 訓練初始車輛 ReID 模型
-scripts/augmix.sh
+bash scripts/augmix.sh
 
 # 裁切 datasets/AIC20_ReID 的訓練資料並放置到 datasets/AIC20_ReID_Cropped
-scripts/weakly_supervised_crop_aug.sh
+bash scripts/weakly_supervised_crop_aug.sh
+```
+
+## step 2 Train
+
+- **Vehicle ReID.**
+```
+bash ./scripts/aicity20/train.sh
+```
+- **Orientation ReID** Train orientation ReID model
+```
+bash ./scripts/aicity20/ReOriID.sh
+```
+- **Camera ReID** Train camera ReID model
+```
+bash ./scripts/aicity20/ReCamID.sh
 ```
