@@ -13,9 +13,41 @@ conda activate voc-reid
 pip install -r requirements.txt
 ```
 
-由於 PyTorch 需依照系統架構（x86 / ARM）與 CUDA 環境選擇對應版本，請依官方指引自行安裝：
+由於 PyTorch 需依照系統架構（x86 / ARM）與 CUDA 環境選擇對應版本，請依官方指引自行安裝，但由於要使用 apex 套件，不要安裝太新的版本 (本次使用 1.13.1)：
 
 👉 [https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/)
+
+```bash
+conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.6 -c pytorch -c nvidia
+```
+
+[apex](https://github.com/NVIDIA/apex)安裝 (非常難搞，整個步驟最難的部分...):
+
+```bash
+git clone https://github.com/NVIDIA/apex
+cd apex
+git checkout 22.04-dev
+```
+
+打開 setup.py，禁用 ninja。
+
+```bash
+cmdclass={"build_ext": BuildExtension} if ext_modules else {} # 原本
+cmdclass={"build_ext": BuildExtension.with_options(use_ninja=False)} if ext_modules else {}, # 修改後
+```
+
+開始編譯~
+
+```bash
+# Using pip config-settings (pip >= 23.1)
+pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
+
+# For older pip versions
+pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+```
+
+可能會遇到的問題: [fatal error: cusolverDn.h: No such file or directory](https://github.com/deepspeedai/DeepSpeed/issues/2684)
+
 
 ### 資料集下載
 
