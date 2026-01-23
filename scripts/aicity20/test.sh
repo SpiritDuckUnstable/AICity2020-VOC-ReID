@@ -1,6 +1,6 @@
 #----------------------- 50-circle------------------------------------------
 python tools/aicity20/submit.py --config_file='configs/aicity20.yml' \
-MODEL.DEVICE_ID "('1')" \
+MODEL.DEVICE_ID "('0')" \
 MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('aicity20',)" \
@@ -20,7 +20,7 @@ TEST.WEIGHT "('./output/aicity20/0409-ensemble/r50-320-circle/best.pth')"
 
 #------------------------101-circle-----------------------------------------
 python tools/aicity20/submit.py --config_file='configs/aicity20.yml' \
-MODEL.DEVICE_ID "('1')" \
+MODEL.DEVICE_ID "('0')" \
 MODEL.NAME "('resnet101_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('aicity20',)" \
@@ -40,7 +40,7 @@ TEST.WEIGHT "('./output/aicity20/0409-ensemble/r101-320-circle/best.pth')"
 
 #----------------------- next-cirlce ---------------------------------------
 python tools/aicity20/submit.py --config_file='configs/aicity20.yml' \
-MODEL.DEVICE_ID "('1')" \
+MODEL.DEVICE_ID "('0')" \
 MODEL.NAME "('resnext101_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('aicity20',)" \

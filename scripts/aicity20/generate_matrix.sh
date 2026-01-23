@@ -1,6 +1,6 @@
 # ReCamID
 python tools/test.py --config_file='configs/aicity20.yml' \
-MODEL.DEVICE_ID "('1')" \
+MODEL.DEVICE_ID "('0')" \
 MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('aicity20',)" \
@@ -14,7 +14,7 @@ python ./tools/aicity20/compute_distmat_from_feats.py --src_dir ./output/aicity2
 
 # ReOriID
 python tools/test.py --config_file='configs/aicity20.yml' \
-MODEL.DEVICE_ID "('2')" \
+MODEL.DEVICE_ID "('0')" \
 MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('aicity20',)" \
