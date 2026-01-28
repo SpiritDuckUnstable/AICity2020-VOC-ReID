@@ -9,3 +9,4 @@ __pycache__/
 pre_models/
 *.zip
 *.part
+vis/

@@ -14,8 +14,8 @@ TEST.RERANK_PARAM "([50, 15, 0.5])" \
 TEST.FLIP_TEST True \
 TEST.WRITE_RESULT True \
 TEST.USE_VOC True \
-TEST.CAM_DIST_PATH './output/aicity20/0409-ensemble/ReCamID/feat_distmat.npy' \
-TEST.ORI_DIST_PATH './output/aicity20/0409-ensemble/ReOriID/feat_distmat.npy' \
+TEST.CAM_DIST_PATH './output/aicity20/0409-ReCamID/feat_distmat.npy' \
+TEST.ORI_DIST_PATH './output/aicity20/0409-ReOriID/feat_distmat.npy' \
 TEST.WEIGHT "('./output/aicity20/0409-ensemble/r50-320-circle/best.pth')"
 
 #------------------------101-circle-----------------------------------------
@@ -34,8 +34,8 @@ TEST.RERANK_PARAM "([50, 15, 0.5])" \
 TEST.FLIP_TEST True \
 TEST.WRITE_RESULT True \
 TEST.USE_VOC True \
-TEST.CAM_DIST_PATH './output/aicity20/0409-ensemble/ReCamID/feat_distmat.npy' \
-TEST.ORI_DIST_PATH './output/aicity20/0409-ensemble/ReOriID/feat_distmat.npy' \
+TEST.CAM_DIST_PATH './output/aicity20/0409-ReCamID/feat_distmat.npy' \
+TEST.ORI_DIST_PATH './output/aicity20/0409-ReOriID/feat_distmat.npy' \
 TEST.WEIGHT "('./output/aicity20/0409-ensemble/r101-320-circle/best.pth')"
 
 #----------------------- next-cirlce ---------------------------------------
@@ -54,6 +54,6 @@ TEST.RERANK_PARAM "([50, 15, 0.5])" \
 TEST.FLIP_TEST True \
 TEST.WRITE_RESULT True \
 TEST.USE_VOC True \
-TEST.CAM_DIST_PATH './output/aicity20/0409-ensemble/ReCamID/feat_distmat.npy' \
-TEST.ORI_DIST_PATH './output/aicity20/0409-ensemble/ReOriID/feat_distmat.npy' \
+TEST.CAM_DIST_PATH './output/aicity20/0409-ReCamID/feat_distmat.npy' \
+TEST.ORI_DIST_PATH './output/aicity20/0409-ReOriID/feat_distmat.npy' \
 TEST.WEIGHT "('./output/aicity20/0409-ensemble/next101-320-circle/best.pth')"

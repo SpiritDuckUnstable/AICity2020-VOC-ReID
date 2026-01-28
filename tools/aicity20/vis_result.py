@@ -4,7 +4,8 @@ import os
 import sys
 
 sys.path.append('.')
-from lib.data.datasets.aicity20_trainval import AICity20Trainval
+from lib.data.datasets.aicity20 import AICity20
+# from lib.data.datasets.aicity20_trainval import AICity20Trainval
 
 def visualize_submit(dataset, out_dir, submit_txt_path, topk=5):
     query_dir = dataset.query_dir
@@ -27,19 +28,32 @@ def visualize_submit(dataset, out_dir, submit_txt_path, topk=5):
         img_to_pid[name] = pid
 
     for i, result in enumerate(results):
+        # 如果結果數量跟 query 數量不對齊，避免 index error
+        # if i >= len(dataset.query):
+        #    break
+
         is_False = False
         # query_path = os.path.join(query_dir, str(i+1).zfill(6)+'.jpg')
         query_path = os.path.join(query_dir, os.path.basename(dataset.query[i][0]))
         gallery_paths = []
+        gallery_filenames = [] # 另外存檔名用來查 PID
         for name in result:
-            # gallery_paths.append(os.path.join(gallery_dir, index.zfill(6)+'.jpg'))
-            gallery_paths.append(os.path.join(gallery_dir, name))
+            # 將 ID (15391) 轉成檔名
+            filename = "{:06d}.jpg".format(int(name))
+            
+            # gallery_paths.append(os.path.join(gallery_dir, index.zfill(6)+'.jpg'))    
+            gallery_paths.append(os.path.join(gallery_dir, filename))
+            gallery_filenames.append(filename)
 
         imgs = []
         imgs.append(cv2.resize(cv2.imread(query_path), vis_size))
-        for n in range(topk):
+        for n in range(topk):                        
             img = cv2.resize(cv2.imread(gallery_paths[n]), vis_size)
-            if query_pids[i] != img_to_pid[result[n]]:
+            
+            # 查 PID 時使用正確的 key，使用 .get() 避免 Key Error
+            gallery_pid = img_to_pid.get(gallery_filenames[n], -999) 
+            
+            if query_pids[i] != gallery_pid:
                 img = cv2.rectangle(img, (0, 0), vis_size, (0, 0, 255), 2)
                 is_False = True
             imgs.append(img)
@@ -51,12 +65,12 @@ def visualize_submit(dataset, out_dir, submit_txt_path, topk=5):
 
 if __name__ == '__main__':
     # dataset_dir = '/home/xiangyuzhu/data/ReID/AIC20_ReID'
-    dataset = AICity20Trainval(root='/home/zxy/data/ReID/vehicle')
+    # dataset = AICity20Trainval(root='/data/zhuang39/AICity2020-VOC-ReID/datasets')
     #
-    # dataset_dir = '/home/zxy/data/ReID/vehicle/AIC20_ReID_Cropped'
+    dataset = AICity20(root='datasets')
     # query_dir = os.path.join(dataset_dir, 'image_query')
     # gallery_dir = os.path.join(dataset_dir, 'image_test')
-
+    
     out_dir = 'vis/'
-    submit_txt_path = './output/aicity20/experiments/circle-sim-aug/result_voc.txt'
+    submit_txt_path = './output/aicity20/submit/track2.txt'
     visualize_submit(dataset, out_dir, submit_txt_path)
