@@ -28,11 +28,6 @@ def generate_split():
     
     # 讀取所有圖片資訊
     # 格式需求: pid_camid_trackid_imagename
-    # XML 屬性: vehicleID, cameraID, imageName
-    # 注意: XML 裡沒有 trackID，我們需要為了格式相容偽造一個，或者從檔名推測(如果有的話)。
-    # 觀察 aicity20_ReCam.py 的讀取方式: pid, camid, trackid, image_name = line.split('_')
-    # 所以我們必須生成這種格式的字串。
-    
     print("正在解析 train_label.xml ...")
     for obj in items:
         pid = int(obj.attrib['vehicleID'])
