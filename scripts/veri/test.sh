@@ -1,6 +1,6 @@
 #------------------------- generate orientation-camera matrix--------------------
 python tools/test.py --config_file='configs/aicity20.yml' \
-MODEL.DEVICE_ID "('3')" \
+MODEL.DEVICE_ID "('0')" \
 MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 DATASETS.TRAIN "('veri',)" \
@@ -15,7 +15,7 @@ python ./tools/aicity20/compute_distmat_from_feats.py --src_dir ./output/veri/Re
 
 
 python tools/test.py --config_file='configs/aicity20.yml' \
-MODEL.DEVICE_ID "('3')" \
+MODEL.DEVICE_ID "('0')" \
 MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 MODEL.POOLING_METHOD 'GeM' \
@@ -26,11 +26,11 @@ MODEL.PRETRAIN_CHOICE "('self')" \
 TEST.WRITE_RESULT True \
 TEST.WEIGHT "('./output/veri/ReCamID/best.pth')"
 
-python ./tools/aicity20/compute_distmat_from_feats.py --src_dir ./output/veri/ReOriID/
+python ./tools/aicity20/compute_distmat_from_feats.py --src_dir ./output/veri/ReCamID/
 
 #------------------------- test with VOC-----------------------------------------
 python tools/test.py --config_file='configs/veri.yml' \
-MODEL.DEVICE_ID "('3')" \
+MODEL.DEVICE_ID "('0')" \
 MODEL.NAME "('resnet50_ibn_a')" \
 MODEL.MODEL_TYPE "baseline" \
 MODEL.POOLING_METHOD 'GeM' \
@@ -40,7 +40,9 @@ DATASETS.ROOT_DIR "('/data/zhuang39/AICity2020-VOC-ReID/datasets')" \
 MODEL.PRETRAIN_CHOICE "('self')" \
 INPUT.SIZE_TRAIN '([320, 320])' \
 INPUT.SIZE_TEST '([320, 320])' \
-TEST.USE_VOC False \
-TEST.CAM_DIST_PATH '' \
+TEST.DO_RERANK True \
+TEST.USE_VOC True \
+TEST.CAM_DIST_PATH './output/veri/ReCamID/feat_distmat.npy' \
 TEST.ORI_DIST_PATH './output/veri/ReOriID/feat_distmat.npy' \
-TEST.WEIGHT "('./output/veri/size320/best.pth')"
+TEST.WEIGHT "('./output/veri/size320/best.pth')" \
+TEST.WRITE_RESULT True

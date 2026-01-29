@@ -4,7 +4,8 @@ import os
 import sys
 
 sys.path.append('.')
-from lib.data.datasets.aicity20 import AICity20
+from lib.data.datasets.veri import VeRi
+# from lib.data.datasets.aicity20 import AICity20
 # from lib.data.datasets.aicity20_trainval import AICity20Trainval
 
 def visualize_submit(dataset, out_dir, submit_txt_path, topk=5):
@@ -37,9 +38,9 @@ def visualize_submit(dataset, out_dir, submit_txt_path, topk=5):
         query_path = os.path.join(query_dir, os.path.basename(dataset.query[i][0]))
         gallery_paths = []
         gallery_filenames = [] # 另外存檔名用來查 PID
-        for name in result:
+        for filename in result:
             # 將 ID (15391) 轉成檔名
-            filename = "{:06d}.jpg".format(int(name))
+            # filename = "{:06d}.jpg".format(int(name))
             
             # gallery_paths.append(os.path.join(gallery_dir, index.zfill(6)+'.jpg'))    
             gallery_paths.append(os.path.join(gallery_dir, filename))
@@ -59,18 +60,18 @@ def visualize_submit(dataset, out_dir, submit_txt_path, topk=5):
             imgs.append(img)
 
         canvas = np.concatenate(imgs, axis=1)
-        #if is_False:
-        cv2.imwrite(os.path.join(out_dir, os.path.basename(query_path)), canvas)
+        if is_False:
+            cv2.imwrite(os.path.join(out_dir, os.path.basename(query_path)), canvas)
 
 
 if __name__ == '__main__':
     # dataset_dir = '/home/xiangyuzhu/data/ReID/AIC20_ReID'
     # dataset = AICity20Trainval(root='/data/zhuang39/AICity2020-VOC-ReID/datasets')
     #
-    dataset = AICity20(root='datasets')
+    dataset = VeRi(root='datasets')
     # query_dir = os.path.join(dataset_dir, 'image_query')
     # gallery_dir = os.path.join(dataset_dir, 'image_test')
     
-    out_dir = 'vis/'
-    submit_txt_path = './output/aicity20/submit/track2.txt'
+    out_dir = 'veri_vis/'
+    submit_txt_path = './output/veri/submit/track2.txt'
     visualize_submit(dataset, out_dir, submit_txt_path)
